@@ -1,0 +1,35 @@
+@import "./layout.scss";
+
+@mixin btn($size: 14px, $color: #fff, $bgcolor: #F04752, $padding: 5px, $radius: 5px) {
+    padding: $padding;
+    background-color: $bgcolor;
+    border-radius: $radius;
+    border: 1px solid $bgcolor; // 技巧：让边框和背景色一样，看似无边框。
+    font-size: $color;
+    color: $color;
+    text-align: center;
+    line-height: 1;
+    display: inline-block;
+}
+
+// 传入变量来决定是横向还是纵向列表
+@mixin list($direction: column) {
+    @include flex($direction); // 继承
+}
+
+@mixin panel($bgcolor: #fff, $padding: 0, $margin: 20px 0, $height: 112px, $txtPadding: 0 32px, $color: #333, $fontSize: 32px) {
+    background-color: $bgcolor;
+    padding: $padding;
+    margin: $margin;
+    >h4 {
+        height: $height;
+        line-height: $height;
+        padding: $padding; // 通过这种方式让它垂直居中
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        text-align: center;
+        color: $color;
+        font-size: $fontSize;
+    }
+}
