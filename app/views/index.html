@@ -7,10 +7,74 @@
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <title>Test</title>
+    <style>
+      html a {
+        color: blue;
+        cursor: pointer;
+        margin: 15px;
+      }
+    </style>
   </head>
   <body>
     <article id="app">
-      
     </article>
+    
+    <!-- history实现SPA -->
+    <h3>History</h3>
+<a class="history api a">a.html</a>
+<a class="history api b">b.html</a>
+<script>
+  // 注册路由
+  document.querySelectorAll(".api").forEach(item => {
+    item.addEventListener('click', e => {
+      e.preventDefault();
+      let link = item.textContent;
+
+      // Todo: 打开某一个页面的动作，具体业务逻辑
+      
+      // 创建一个历史记录
+      // pushState接受三个参数：1.想要在页面之间传递的参数 2. 页面的title 3. 真实的地址
+      window.history.pushState({name: 'api'}, link, link);
+    }, false);
+  });
+
+  // 监听路由
+  window.addEventListener("popstate", e => {
+    console.log({
+      location: location.href,
+      state: e.state
+    });
+  })
+</script>
+
+    <br>
+    <br>
+    <br>
+
+    <!-- hash实现SPA -->
+    <h3>Hash</h3>
+    <a class="hash e">#e.html</a>
+    <a class="hash f">#f.html</a>
+    <script>
+      // 注册路由
+      document.querySelectorAll(".hash").forEach(item => {
+        item.addEventListener('click', e => {
+          e.preventDefault();
+          let link = item.textContent;
+          
+          // Todo: 打开某一个页面的动作，具体业务逻辑
+
+          location.hash = link;
+        }, false)
+      });
+
+      // 监听路由
+      window.addEventListener("hashchange", e => {
+        console.log({
+          location: location.href,
+          hash: location.hash
+        });
+      })
+    </script>
   </body>
 </html>
