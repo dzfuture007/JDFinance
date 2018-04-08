@@ -1,6 +1,7 @@
 <template>
     <Panel title="下载APP" :class="$style.panel">
         <section :class="$style.content">
+            <!-- 中间的图片，div的背景图 -->
             <div class=""/>
             <p>立即下载</p>
             <span>copyright</span>
