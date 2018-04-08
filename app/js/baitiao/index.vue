@@ -15,11 +15,13 @@ import Navbar from "../public/navbar.vue"
 import Footor from "../public/footer.vue"
 import Slider from "./bslider.vue"
 import Service from "./service.vue"
+import Weal from "./weal.vue"
 
 export default {
     components: {
         Heador,
         Slider,
+        Weal,
         Footor,
         Service,
         Navbar,

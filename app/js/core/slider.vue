@@ -28,7 +28,7 @@ export default {
             type: Object,
             default() {
                 return {
-                    autoPlay: true,
+                    autoplay: true,
                     loop: true,
                     pagination: {
                         el: ".swiper-pagination",
