@@ -1,8 +1,8 @@
 <template>
-    <Panel title="极速借贷" :class="$style.panel">
+    <Panel :class="$style.panel">
         <section :class="$style.content">
-            <router-link :to="{ name: '' }">
-                <img src="//img12.360buyimg.com/jrpmobile/jfs/t12721/42/2497849749/26333/ec584be4/5a421756N2416c88f.png?width=750&height=250" alt="">
+            <router-link to="{ name: '' }">
+                <img src="//img12.360buyimg.com/jrpmobile/jfs/t10876/23/2566835181/40527/d7d27c08/59f97d68Ne53fda5b.png?width=1080&height=240" alt="">
             </router-link>
         </section>
     </Panel>
@@ -21,11 +21,14 @@ export default {
     @import "../../css/element.scss";
     .panel {
         @include panel;
+        >h4 {
+            display: none;
+        }
         .content {
-            padding-bottom: 40px;
-            img {
+             img {
                 display: block;
-                width: 100%;;
+                width: 100%;
+                height: 142px;
             }
         }
     }

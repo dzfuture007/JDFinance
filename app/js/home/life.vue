@@ -2,7 +2,7 @@
     <Panel title="生活服务" :class="$style.panel">
         <ul :class="$style.content">
             <li :class="$style.item" v-for="item in items" :key="item.src">
-                <router-link to="{ name: 'item.href' }">
+                <router-link :to="{ name: 'item.href' }">
                     <img :src="item.src" alt="item.title">
                     <p>{{ item.title }}</p>
                     <p>{{ item.ps }}</p>
